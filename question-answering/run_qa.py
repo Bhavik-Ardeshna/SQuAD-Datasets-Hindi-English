@@ -264,7 +264,7 @@ def main():
         # raw_datasets = load_dataset(
         #     data_args.dataset_name, data_args.dataset_config_name, cache_dir=model_args.cache_dir
         # )
-        raw_datasets = load_dataset("/content/SQuAD-Datasets-Hindi-English/question-answering/squad.py", data_files={'train': '/content/SQuAD-Datasets-Hindi-English/train-v1.1.json', 'validation': '/content/SQuAD-Datasets-Hindi-English/dev-v1.1.json'})
+        raw_datasets = load_dataset("/content/SQuAD-Datasets-Hindi-English/question-answering/squad.py", data_files={'train': '/content/SQuAD-Datasets-Hindi-English/hi_dataset.json', 'dev': '/content/SQuAD-Datasets-Hindi-English/hi_val_dataset.json'})
 
     else:
         data_files = {}
@@ -279,7 +279,7 @@ def main():
             data_files["test"] = data_args.test_file
             extension = data_args.test_file.split(".")[-1]
         # raw_datasets = load_dataset(extension, data_files=data_files, field="data", cache_dir=model_args.cache_dir)
-        raw_datasets = load_dataset("squad.py", data_files={'train': data_files["train"], 'dev': data_files["validation"]})
+        raw_datasets = load_dataset("/content/SQuAD-Datasets-Hindi-English/question-answering/squad.py", data_files={'train': data_files["train"], 'dev': data_files["validation"]})
 
     #  See more about loading any type of standard or custom dataset (from files, python dict, pandas DataFrame, etc) at
     # https://huggingface.co/docs/datasets/loading_datasets.html.
